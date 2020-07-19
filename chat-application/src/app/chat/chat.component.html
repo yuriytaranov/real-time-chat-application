@@ -1,0 +1,11 @@
+<h3>Chat</h3>
+<div>
+    <input #messageContent placeholder="Type your message here" />
+    <button (click)="addMessage(messageContent.value); messageContent.value = ''">Send</button>
+</div>
+<div *ngIf="messages">
+<h4>History</h4>
+<div>
+    <div *ngFor="let message of messages"><span>{{message.sent}}</span><br>{{ message.content }}</div>
+</div>
+</div>
